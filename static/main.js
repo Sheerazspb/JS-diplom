@@ -14,7 +14,7 @@ class Profile {
         };
         this.password = password;
     }
-    
+
     newUser(callback) {
         return ApiConnector.createUser({
                 username: this.username,
@@ -80,17 +80,13 @@ class Profile {
         });
     }
 
-    getStocks(callback) {
-        return ApiConnector.getStocks((err, data) => {
-            console.log(data);
-            console.log('Getting stocks information');
-            callback(err, data);
-        });
-    }
+}
 
-    currentCurrency() {
-        ApiConnector.getStocks
-    }
+function getStocks(callback) {
+    return ApiConnector.getStocks((err, data) => {
+        console.log(`Getting stocks information`);
+        callback(err, data);
+    });
 }
 
 function main() {
